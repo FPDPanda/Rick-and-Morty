@@ -1,0 +1,55 @@
+.App-main-screen-episode {
+  width: 100%;
+
+  margin-bottom: 5px;
+
+  overflow: hidden;
+
+  font-family: sans-serif;
+}
+
+.App-main-screen-episode--open {
+  height: 500px;
+}
+
+.App-main-screen-episode--closed {
+  height: 30px;
+}
+
+.App-main-screen-episodeNumber {
+  margin-top: -3px;
+  font-family: "Covered By Your Grace";
+  font-size: 1.5rem;
+}
+
+.App-main-screen-episode ul {
+  width: 80%;
+  list-style: none;
+  margin: auto;
+  padding: 0;
+
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+
+  column-gap: 2px;
+}
+.App-main-screen-episodeTitles {
+  font-family: "Exo";
+}
+
+.App-main-screen-episode ul img {
+  width: 100px;
+  height: 100px;
+}
+
+.App-main-screen-episode-location {
+  width: 110px;
+  border-radius: 10px;
+  background-color: rgb(245, 245, 129);
+  padding: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
