@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+
+// Fonts
+// import "@fontsource/inknut-antiqua";
+// import "@fontsource/exo";
+// import "@fontsource/covered-by-your-grace";
+
+// CSS
+import "./App.css";
+
+// Components
+import Main from "./components/Main";
+
+// Apollo client setup
+const client = new ApolloClient({
+  uri: "https://rickandmortyapi.com/graphql",
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <Main />
+      </div>
+    </ApolloProvider>
   );
 }
 

@@ -1,0 +1,21 @@
+.App-main {
+    margin: auto;
+    padding: 10px;
+    width: 80%;
+    height: 80%;
+
+    background-color: rgba(98, 164, 171, 0.8);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border: 2px solid rgba(233, 253, 255, 0.8);
+    border-radius: 10px;
+}
+
+@media screen and (max-width:900px) {
+    .App-main {
+        flex-direction: column;
+    }
+}
