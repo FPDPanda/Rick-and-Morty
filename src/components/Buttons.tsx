@@ -3,9 +3,9 @@ import { QueryHookOptions, useQuery } from "@apollo/client";
 
 // CSS
 import "../styles/Buttons.css";
-import QueryGenerator, { query } from "../queries/queries.ts";
 
 // Queries
+import QueryGenerator, { query } from "../queries/queries.ts";
 
 function Buttons({ sendUpdateScreenEvent }) {
   const [currentQuery, updateQuery] = useState(query);

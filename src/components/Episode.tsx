@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 // CSS
 import "../styles/Episode.css";
+
+// Entites
 import RickAndMortyCharacter from "../entities/RickAndMortyCharacter";
 import RickAndMortyLocation from "../entities/RickAndMortyLocation";
 

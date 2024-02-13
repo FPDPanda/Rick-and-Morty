@@ -4,7 +4,9 @@ import React, { useState, useMemo } from "react";
 import "../styles/Screen.css";
 
 // Components
-import Episode from "./Episode";
+import Episode from "./Episode.tsx";
+
+// Entities
 import RickAndMortyEpisode from "../entities/RickAndMortyEpisode";
 
 function Screen({ screenShouldUpdate }) {

@@ -9,7 +9,7 @@ import "@fontsource/covered-by-your-grace";
 import "./App.css";
 
 // Components
-import Main from "./components/Main";
+import Main from "./components/Main.tsx";
 
 // Apollo client setup
 const client = new ApolloClient({
