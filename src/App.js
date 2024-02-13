@@ -1,9 +1,9 @@
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
 // Fonts
-// import "@fontsource/inknut-antiqua";
-// import "@fontsource/exo";
-// import "@fontsource/covered-by-your-grace";
+import "@fontsource/inknut-antiqua";
+import "@fontsource/exo";
+import "@fontsource/covered-by-your-grace";
 
 // CSS
 import "./App.css";

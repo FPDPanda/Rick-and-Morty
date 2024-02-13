@@ -5,6 +5,9 @@
   "dependencies": {
     "@apollo/client": "^3.9.4",
     "@apollo/react-hooks": "^4.0.0",
+    "@fontsource/covered-by-your-grace": "^5.0.8",
+    "@fontsource/exo": "^5.0.16",
+    "@fontsource/inknut-antiqua": "^5.0.8",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
