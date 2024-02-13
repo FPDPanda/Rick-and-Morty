@@ -32,12 +32,14 @@ function Screen() {
   } else {
     return (
       <aside className="App-main-screen">
-        {data.map((episode) => (
-          <Episode
-            episodeNumber={episode.episodeNumber}
-            episodeCharacters={episode.characters}
-            episodeLocations={episode.locations}
-          />
+        {data.map((episode, key) => (
+          <div key={key}>
+            <Episode
+              episodeNumber={episode.episodeNumber}
+              episodeCharacters={episode.characters}
+              episodeLocations={episode.locations}
+            />
+          </div>
         ))}
       </aside>
     );

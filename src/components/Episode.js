@@ -25,14 +25,16 @@ function Episode({ episodeNumber, episodeLocations, episodeCharacters }) {
 
       <ul>
         {episodeLocations.map((location) => (
-          <li className="App-main-screen-episode-location">{location.name}</li>
+          <li key={location.id} className="App-main-screen-episode-location">
+            {location.name}
+          </li>
         ))}
       </ul>
 
       <h2 className="App-main-screen-episodeTitles">Characters</h2>
       <ul>
         {episodeCharacters.map((character) => (
-          <li>
+          <li key={character.id}>
             <img src={character.image} alt={character.name}></img>
             <p>{character.name}</p>
           </li>
