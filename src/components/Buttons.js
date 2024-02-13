@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
 
 // CSS
 import "../styles/Buttons.css";
+import QueryGenerator, { query } from "../queries/queries.ts";
 
 // Queries
-import { queryCharactersAndLocations } from "../queries/queries";
-import { useQuery } from "@apollo/client";
 
-function Buttons() {
-  const { data } = useQuery(queryCharactersAndLocations, {
+function Buttons({ sendUpdateScreenEvent }) {
+  const [currentQuery, updateQuery] = useState(query);
+
+  const { data } = useQuery(currentQuery, {
     refetchOnWindowFocus: false,
     enabled: false, // disable this query from automatically running
   });
@@ -32,7 +34,8 @@ function Buttons() {
       JSON.stringify(episodes)
     );
 
-    window.location.reload();
+    sendUpdateScreenEvent(Math.random());
+    updateQuery(new QueryGenerator().getQuery());
   };
 
   return (
