@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useQuery } from "@apollo/client";
+import { QueryHookOptions, useQuery } from "@apollo/client";
 
 // CSS
 import "../styles/Buttons.css";
-import QueryGenerator, { query } from "../queries/queries.ts";
 
 // Queries
+import QueryGenerator, { query } from "../queries/queries.ts";
 
 function Buttons({ sendUpdateScreenEvent }) {
   const [currentQuery, updateQuery] = useState(query);
@@ -13,7 +13,7 @@ function Buttons({ sendUpdateScreenEvent }) {
   const { data } = useQuery(currentQuery, {
     refetchOnWindowFocus: false,
     enabled: false, // disable this query from automatically running
-  });
+  } as QueryHookOptions);
 
   const createEpisode = () => {
     let newEpisodeNumber = localStorage.length + 1;

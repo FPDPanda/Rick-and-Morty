@@ -3,6 +3,10 @@ import React, { useState } from "react";
 // CSS
 import "../styles/Episode.css";
 
+// Entites
+import RickAndMortyCharacter from "../entities/RickAndMortyCharacter";
+import RickAndMortyLocation from "../entities/RickAndMortyLocation";
+
 function Episode({ episodeNumber, episodeLocations, episodeCharacters }) {
   let [openEpisode, setOpenEpisode] = useState(false);
 
@@ -24,7 +28,7 @@ function Episode({ episodeNumber, episodeLocations, episodeCharacters }) {
       <h2 className="App-main-screen-episodeTitles">Locations</h2>
 
       <ul>
-        {episodeLocations.map((location) => (
+        {episodeLocations.map((location: RickAndMortyLocation) => (
           <li key={location.id} className="App-main-screen-episode-location">
             {location.name}
           </li>
@@ -33,7 +37,7 @@ function Episode({ episodeNumber, episodeLocations, episodeCharacters }) {
 
       <h2 className="App-main-screen-episodeTitles">Characters</h2>
       <ul>
-        {episodeCharacters.map((character) => (
+        {episodeCharacters.map((character: RickAndMortyCharacter) => (
           <li key={character.id}>
             <img src={character.image} alt={character.name}></img>
             <p>{character.name}</p>

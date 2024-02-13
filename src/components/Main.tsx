@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import "../styles/Main.css";
 
 // Components
-import Screen from "./Screen";
-import Buttons from "./Buttons";
+import Screen from "./Screen.tsx";
+import Buttons from "./Buttons.tsx";
 
 function Main() {
   const [screenShouldUpdate, sendUpdateScreenEvent] = useState(1);
