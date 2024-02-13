@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useQuery } from "@apollo/client";
+import { QueryHookOptions, useQuery } from "@apollo/client";
 
 // CSS
 import "../styles/Buttons.css";
@@ -13,7 +13,7 @@ function Buttons({ sendUpdateScreenEvent }) {
   const { data } = useQuery(currentQuery, {
     refetchOnWindowFocus: false,
     enabled: false, // disable this query from automatically running
-  });
+  } as QueryHookOptions);
 
   const createEpisode = () => {
     let newEpisodeNumber = localStorage.length + 1;

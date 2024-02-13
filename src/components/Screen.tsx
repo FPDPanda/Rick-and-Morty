@@ -5,24 +5,37 @@ import "../styles/Screen.css";
 
 // Components
 import Episode from "./Episode";
+import RickAndMortyEpisode from "../entities/RickAndMortyEpisode";
 
 function Screen({ screenShouldUpdate }) {
-  let [data] = useState([]);
+  let [data] = useState([] as RickAndMortyEpisode[]);
   let [loading, setLoading] = useState(false);
 
   useMemo(() => {
     const setNewEpisode = () => {
       setLoading(true);
       for (let i = 1; i < localStorage.length + 1; i++) {
-        if (!data.some((e) => e.episodeNumber === i)) {
-          const episode = JSON.parse(localStorage.getItem("episode" + i));
-          data.push(episode);
+        if (
+          !data.some(
+            (episode: RickAndMortyEpisode) => episode.episodeNumber === i
+          )
+        ) {
+          const episode = localStorage.getItem("episode" + i);
+
+          if (episode != null) {
+            const parsedEpisode = JSON.parse(episode);
+            data.push(parsedEpisode);
+          } else {
+            throw new Error(`Could not find episode ${i} in local storage`);
+          }
         }
       }
 
       setLoading(false);
     };
     setNewEpisode();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, screenShouldUpdate]);
 
   if (loading) {
