@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 
 // CSS
 import "../styles/Screen.css";
@@ -6,20 +6,24 @@ import "../styles/Screen.css";
 // Components
 import Episode from "./Episode";
 
-function Screen() {
+function Screen({ screenShouldUpdate }) {
   let [data] = useState([]);
-  let [loading, setLoading] = useState(true);
+  let [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    for (let i = 1; i < localStorage.length + 1; i++) {
-      if (!data.some((e) => e.episodeNumber === i)) {
-        data.push(JSON.parse(localStorage.getItem("episode" + i)));
+  useMemo(() => {
+    const setNewEpisode = () => {
+      setLoading(true);
+      for (let i = 1; i < localStorage.length + 1; i++) {
+        if (!data.some((e) => e.episodeNumber === i)) {
+          const episode = JSON.parse(localStorage.getItem("episode" + i));
+          data.push(episode);
+        }
       }
-    }
-    if (data) {
+
       setLoading(false);
-    }
-  }, [data]);
+    };
+    setNewEpisode();
+  }, [data, screenShouldUpdate]);
 
   if (loading) {
     return (
