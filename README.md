@@ -2,6 +2,8 @@
 
 Welcome to the Rick and Morty Episode Generator repository! This project is a fun application built using React, TypeScript (TSX), Apollo Client, and GraphQL. It utilizes the [Rick and Morty GraphQL API](https://rickandmortyapi.com/graphql) to randomly generate episodes with a selection of characters and locations from the beloved animated series Rick and Morty.
 
+Hosted on Firebase, so you can check it out here: [Rick and Morty Episode Generator](https://rick-n-morty-episode-generator.web.app/)
+
 ## Overview
 
 This application generates a random episode of Rick and Morty by fetching character and location data from the GraphQL API provided by [rickandmortyapi.com](https://rickandmortyapi.com/graphql). It then presents the user with a unique combination of characters and locations, creating an imaginative episode scenario.
